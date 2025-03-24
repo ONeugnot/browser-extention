@@ -81,7 +81,7 @@ const extensions = [
 
 const main = document.querySelector("main");
 
-function createCardElement(img, nom, descriptionn, bnactive) {
+function createCardElement(element) {
 	const section = document.createElement("section");
 	const cardElement = document.createElement("div");
 	const headerCardElement = document.createElement("div");
@@ -94,4 +94,37 @@ function createCardElement(img, nom, descriptionn, bnactive) {
 	const labelBtnElement = document.createElement("label");
 	const inputCheckBoxElement = document.createElement("input");
 	const spanSliderElement = document.createElement("span");
+
+	section.classList.add = "Extensions";
+	cardElement.classList.add = "card";
+	headerCardElement.classList.add = "header-card";
+	rightHeadElement.classList.add = "right-head";
+	spanElementRightHead.classList.add = "span-color";
+	footerCardElement.classList.add = "footer-card";
+	btnRemoveCardElement.classList.add = "remove";
+	labelBtnElement.classLista.add = "switch";
+	inputCheckBoxElement.classList.add = "checkbox";
+	spanSliderElement.classList.add = "slider";
+	spanSliderElement.classList.add = "round";
+
+	imgLogo.src = element.logo;
+	pElementRightHead.textContent = element.name;
+	spanElementRightHead.textContent = element.description;
+
+	section.appendChild(cardElement);
+	cardElement.appendChild(headerCardElement);
+	headerCardElement.appendChild(imgLogo);
+	headerCardElement.appendChild(rightHeadElement);
+	rightHeadElement.appendChild(pElementRightHead);
+	rightHeadElement.appendChild(spanElementRightHead);
+	cardElement.appendChild(footerCardElement);
+	footerCardElement.appendChild(btnRemoveCardElement);
+	footerCardElement.appendChild(labelBtnElement);
+	labelBtnElement.appendChild(inputCheckBoxElement);
+	labelBtnElement.appendChild(spanSliderElement);
+	return section;
 }
+
+const res = createCardElement(element);
+
+extensions.forEach(res);
